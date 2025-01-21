@@ -1,0 +1,211 @@
+.header{
+    display: flex;
+    /* border: 1px dotted; */
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(205, 226, 192);
+    height: 90px;
+}
+
+.logo img{
+    width: 120px;
+    height: 90px;
+    border-radius: 50px;
+}
+.nav-items{
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+    margin-right: 70px;
+    width: auto;
+}
+.nav-items >ul{
+    display: flex;
+    list-style-type: none;
+}
+.nav-items > ul >li{
+    font-size: 22px;
+    /* padding: 20px; */
+    /* margin-left: 20px; */
+    margin-right: 70px;
+    margin-top: 10px;
+}
+.login-btn{
+    width: 100px;
+    height: 40px;
+    margin-top: 8px;
+    background-color: rgb(214, 156, 141);
+    border: 1px dotted black;
+    border-radius: 10px;
+    font-weight: bold;
+    color: rgb(13, 13, 78);
+    font-size: 15px;
+    cursor: pointer;
+}
+.res-card{
+    border: 0px solid black;
+    width: 250px;
+    height: 200px; 
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+ .res-card>img{
+     width: 250px;
+     height: 200px;
+     border-radius: 30px;
+ }
+ .res-card>h3{
+    margin: 10px;
+    font-family: Gilroy_Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-left: 20px;
+ }
+ .res-card>h4{
+    display: grid;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 2px;
+    gap: 2px;
+    grid-auto-flow: column;
+    -webkit-box-pack: start;
+    justify-content: start;
+    margin-left: 20px;
+ }
+ .res-card>p{
+    font-family: Gilroy;
+    margin-top: -12px;
+    font-weight: 200;
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+ }
+ .res-card:hover{
+     border: 1px dotted black;
+     cursor: pointer;
+ }
+ .res-image{
+     height: 40%;
+ 
+     /* width: auto; */
+ }
+ .res-container{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     row-gap: 150px;
+     margin-top: 50px;
+    
+ }
+ .res-container>Link{
+    border: 1px;
+ }
+ .filter{
+    margin: 30px;
+    /* padding: 50px; */
+}
+.top-section{
+    display: flex;
+    margin: 30px;
+    
+}
+.search>input{
+    /* padding: 15px; */
+    width: 400px;
+    height: 30px;
+    margin: 20px;
+    border: 1px dotted;
+    color: rgb(153, 54, 54);
+    background-color: lightgrey;
+}
+.search>button{
+    width: 150px;
+    cursor: pointer;
+    height: 35px;
+    background-color: rgb(139, 169, 207);
+    border: 0px;
+    font-size: large;
+}
+.filter>button{
+    width: 150px;
+    cursor: pointer;
+    height: 35px;
+    background-color: rgb(177, 211, 201);
+    border: 0px;
+    margin-top: -55px;
+    font-weight: bold;
+    /* font-size: medium; */
+}
+.shimmer-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.shimmer-card{
+   margin: 20px;
+   width: 250px;
+   height: 400px;
+   background-color: #f0f0f0;
+}
+.shimmer-search{
+    margin: 30px;
+    width: 150px;
+    height: 35px;
+    background-color: #f0f0f0;
+}
+.card-details{
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+.res-menu{
+    max-width: 800px;
+    min-height: 800px;
+    margin: 20px auto 0;
+}
+.res-menu>h1{
+    margin-left: 20px;
+}
+.res-ratings{
+    background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+    padding: 0px 16px 16px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+.res-ratings-info{
+    border-radius: 20px;
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+    line-height: 10px;
+    /* margin-left: 10px; */
+    /* justify-content: center; */
+}
+.ratings-info{
+    margin-left: 20px;
+}
+.ratings-info-cusines{
+    color: rgb(255, 82, 0);
+    margin-left: 20px;
+}
+.Menu-list{
+    border-top: 16px solid rgba(2, 6, 12, 0.05);
+    margin-top: 20px;
+}
