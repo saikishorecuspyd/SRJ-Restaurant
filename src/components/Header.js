@@ -5,9 +5,9 @@ function Header() {
     const[btnName, setBtnName]= useState("Login")
     const onlineStatus = useOnlineStatus()
   return (
-    <div className='header'>
+    <div className='flex'>
         <div className='logo'>
-            <img src='/Images/SRJ.png' alt='res-logo'/>
+            <img className="w-72"src='/Images/SRJ.png' alt='res-logo'/>
         </div>
 
         <div className='nav-items'>
