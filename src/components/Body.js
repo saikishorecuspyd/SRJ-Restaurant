@@ -27,20 +27,20 @@ if(onlineStatus === false)
     return(<h1>Offline!!!, You are not connected to the network</h1>)
 
   return listOfRestaurant.length ===0 ? (<Shimmer /> ) :(
-    <div className='body'>
-        <div className='top-search'>
-            <div className='search'>
-                <input type='text' placeholder='Enter The Restaurant Name' value={searchText} onChange={(e)=>{
+    <div className='mt-6'>
+        <div className='flex m-6 items-center'>
+            <div className=''>
+                <input className='bg-gray-200 w-96 h-10 border border-dotted border-cyan-400 border-1' type='text' placeholder='Enter The Restaurant Name' value={searchText} onChange={(e)=>{
                     setSeacrhText(e.target.value)
                    }}/>
-                <button onClick={()=>{
+                <button className="bg-orange-200 m-4 p-2 w-28 rounded-2xl" onClick={()=>{
                     const changeFilter = listOfRestaurant.filter((res)=>
                     res.info.name.toLowerCase().includes(searchText.toLowerCase()))
                     setDummyListOfRestaurant(changeFilter)
                 }}>Search</button>
             </div>
             
-            <div className="filter">
+            <div className="bg-amber-200 m-4 p-2 w-32 rounded-lg ">
                     <button onClick={()=>{
                        let cardListOfRestaurant = listOfRestaurant.filter((result)=>result.info.avgRating>4)
                        setListOfRestaurant(cardListOfRestaurant)
@@ -48,7 +48,7 @@ if(onlineStatus === false)
                </div>
         </div>
 
-        <div className='res-container'>
+        <div className="flex flex-wrap">
             {
                 dummyListOfRestaurant.map((restaurant) =>(
                     <Link key={restaurant.info.id}
