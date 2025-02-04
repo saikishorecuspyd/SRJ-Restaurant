@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import RestaurantCard from './RestaurantCard'
+import RestaurantCard, {withDiscountInfo} from './RestaurantCard'
 import Shimmer from './Shimmer'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
@@ -8,6 +8,8 @@ function Body() {
     const [listOfRestaurant, setListOfRestaurant]=useState([])
     const [dummyListOfRestaurant, setDummyListOfRestaurant]=useState([])
     const[searchText, setSeacrhText]=useState("")
+
+    const RestaurantCardDiscount = withDiscountInfo(RestaurantCard)
 
     useEffect(()=>{
         fetchData()
@@ -21,7 +23,7 @@ function Body() {
         setDummyListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         // setListOfRestaurant(json?.data?.cards[3]?.card.card)
     }
-    
+console.log(listOfRestaurant)
 const onlineStatus = useOnlineStatus()
 if(onlineStatus === false)
     return(<h1>Offline!!!, You are not connected to the network</h1>)
@@ -53,7 +55,8 @@ if(onlineStatus === false)
                 dummyListOfRestaurant.map((restaurant) =>(
                     <Link key={restaurant.info.id}
                     to={"/city/hyderabad/" + restaurant.info.id} className='card-details'>
-                        <RestaurantCard  resData={restaurant}/></Link>
+                       {restaurant.info.aggregatedDiscountInfoV3 ? (<RestaurantCardDiscount resData={restaurant} />) : ( <RestaurantCard  resData={restaurant}/>)} 
+                      </Link>
                 ))
             }
         </div>
