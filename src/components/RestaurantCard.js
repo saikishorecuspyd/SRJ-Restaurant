@@ -1,8 +1,8 @@
 // import React from 'react'
 import { CDN_URL } from "../utils/constants";
 const RestaurantCard=(props)=>{
-    const {resData} = props;
-    const {cloudinaryImageId, name,avgRating,cuisines,areaName,sla} =resData?.info;
+    // const {resData} = props;
+    const {cloudinaryImageId, name,avgRating,cuisines,areaName,sla} =props?.resData?.info;
   return (
     <div className="m-4 p-4 w-[250px] hover:bg-red-100">
     <img src={CDN_URL +
