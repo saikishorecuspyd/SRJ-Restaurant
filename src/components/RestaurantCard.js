@@ -1,8 +1,11 @@
 // import React from 'react'
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 const RestaurantCard=(props)=>{
     // const {resData} = props;
     const {cloudinaryImageId, name,avgRating,cuisines,areaName,sla} =props?.resData?.info;
+    const {loggedInUser} = useContext(UserContext)
   return (
     <div className="m-4 p-4 w-[250px] hover:bg-red-100">
     <img src={CDN_URL +
@@ -12,6 +15,7 @@ const RestaurantCard=(props)=>{
     <h4>{`⭐${avgRating} ${sla.slaString}`}</h4>
     <p className='py-2'>{cuisines.join(" , ")}</p>
     <p>{areaName}</p>
+    <h4>User: {loggedInUser}</h4>
 </div>
   );
 

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import RestaurantCard, {withDiscountInfo} from './RestaurantCard'
 import Shimmer from './Shimmer'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+import UserContext from '../utils/UserContext'
 
 function Body() {
     const [listOfRestaurant, setListOfRestaurant]=useState([])
@@ -10,7 +11,7 @@ function Body() {
     const[searchText, setSeacrhText]=useState("")
 
     const RestaurantCardDiscount = withDiscountInfo(RestaurantCard)
-
+    const {loggedInUser,setUserName} = useContext(UserContext)
     useEffect(()=>{
         fetchData()
     },[])
@@ -28,10 +29,11 @@ const onlineStatus = useOnlineStatus()
 if(onlineStatus === false)
     return(<h1>Offline!!!, You are not connected to the network</h1>)
 
+
   return listOfRestaurant.length ===0 ? (<Shimmer /> ) :(
     <div className='mt-6'>
         <div className='flex m-6 items-center'>
-            <div className=''>
+            <div>
                 <input className='bg-gray-200 w-96 h-10 border border-dotted border-cyan-400 border-1' type='text' placeholder='Enter The Restaurant Name' value={searchText} onChange={(e)=>{
                     setSeacrhText(e.target.value)
                    }}/>
@@ -48,6 +50,14 @@ if(onlineStatus === false)
                        setListOfRestaurant(cardListOfRestaurant)
                     }}>Top Restaurant</button>
                </div>
+
+               <div>
+                UserName: <input className='bg-gray-200 w-96 h-10 border border-dotted p-2 border-cyan-400 border-1' type='text' placeholder='Enter The User Name'
+                value={loggedInUser}
+                onChange={(e)=>{
+                    setUserName(e.target.value)
+                }}/>
+            </div>
         </div>
 
         <div className="flex flex-wrap">
