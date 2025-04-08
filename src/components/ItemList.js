@@ -1,6 +1,13 @@
+import { useDispatch } from "react-redux";
 import { IMAGE_CATEGORY_URL } from "../utils/constants";
+import { addItems } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
+
+  const dispatch = useDispatch()
+  const handleAddItem =()=>{
+    dispatch(addItems("Burger"))
+  }
     return (
       <div>
         <ul>
@@ -28,7 +35,8 @@ const ItemList = ({ items }) => {
                     className="w-32 h-24 mt-2 rounded-lg object-cover"
                   />
                 )}
-                <button className="bg-white w-20 h-8 text-green-600 font-bold mt-2 border border-green-600 rounded-lg">
+                <button className="bg-white w-20 h-8 text-green-600 font-bold mt-2 border border-green-600 rounded-lg"
+                onClick={handleAddItem}>
                   ADD
                 </button>
               </div>
