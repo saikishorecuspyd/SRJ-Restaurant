@@ -12,6 +12,7 @@ function Header() {
 
     // Subscribing to the Store by using the useSelector.
     const cartItems = useSelector((store)=> store.cart.items)
+    console.log(cartItems)
  
   return (
     <div className='flex justify-between bg-green-100 shadow-xl m-2 h-28'>
